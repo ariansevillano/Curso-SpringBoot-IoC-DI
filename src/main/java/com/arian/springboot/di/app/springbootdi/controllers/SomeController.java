@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.arian.springboot.di.app.springbootdi.models.Product;
-import com.arian.springboot.di.app.springbootdi.services.ProductServiceImpl;
+import com.arian.springboot.di.app.springbootdi.services.ProductService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 @RequestMapping("/api")
 public class SomeController {
     
-    ProductServiceImpl service = new ProductServiceImpl();
+    @Autowired
+    private ProductService service;
 
     @GetMapping
     public List<Product> list() {
