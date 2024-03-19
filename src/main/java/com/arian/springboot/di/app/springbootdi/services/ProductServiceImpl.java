@@ -5,8 +5,9 @@ import java.util.stream.Collectors;
 
 import com.arian.springboot.di.app.springbootdi.models.Product;
 import com.arian.springboot.di.app.springbootdi.repositories.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,9 +16,10 @@ public class ProductServiceImpl implements ProductService {
     //private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 //    @Autowired inyección solo como atributo
 //    private ProductRepository repository;
+    
     private ProductRepository repository;
 
-    public ProductServiceImpl(ProductRepository repository) {
+    public ProductServiceImpl(@Qualifier("productRepositoryImpl") ProductRepository repository) {
         this.repository = repository;
     }
     
