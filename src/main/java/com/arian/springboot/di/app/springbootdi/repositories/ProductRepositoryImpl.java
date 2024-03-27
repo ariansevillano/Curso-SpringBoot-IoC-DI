@@ -6,7 +6,9 @@ import java.util.List;
 import com.arian.springboot.di.app.springbootdi.models.Product;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.web.context.annotation.RequestScope;
 
+@RequestScope
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
     

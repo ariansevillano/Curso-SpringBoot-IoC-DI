@@ -35,9 +35,11 @@ public class ProductServiceImpl implements ProductService {
             Double priceTax = p.getPrice() * 1.25d;
             //p.setPrice(priceTax.longValue());
             //Product newProd = new Product(p.getId(),p.getName(),priceTax.longValue()); //aplicando el principio de inmutabilidad
-            Product newProd = (Product) p.clone();
-            newProd.setPrice(priceTax.longValue());
-            return newProd;
+            //Product newProd = (Product) p.clone();
+            //newProd.setPrice(priceTax.longValue());
+            p.setPrice(priceTax.longValue());
+            return p;
+            //return newProd;
         }).collect(Collectors.toList());
     }
 
